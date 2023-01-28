@@ -1,4 +1,5 @@
 import { ExpressOIDC } from "@okta/oidc-middleware";
+// global.d.ts 'declare module' will fix the error
 import session from "express-session";
 
 export const register = ( app: any ) => {
