@@ -1,8 +1,8 @@
 import dotenv from "dotenv";
 import express from "express";
 import path from "path";
-// import * as sessionAuth from "./middleware/sessionAuth";
-// import * as routes from "./routes";
+import * as sessionAuth from "./middleware/sessionAuth";
+import * as routes from "./routes";
 
 // initialize configuration
 dotenv.config();
@@ -24,10 +24,10 @@ app.set( "view engine", "ejs" );
 app.use( express.static( path.join( __dirname, "public" ) ) );
 
 // Configure session auth
-// sessionAuth.register( app );
+sessionAuth.register( app );
 
 // Configure routes
-// routes.register( app );
+routes.register( app );
 app.get( "/", ( req, res ) => {
     // render the index template
     res.render( "index" );
